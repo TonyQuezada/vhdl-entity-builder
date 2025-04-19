@@ -37,8 +37,12 @@ const Port = ( { portPlaceholder="port_name", disabled=false, portProperties, on
                     <option value="out">out</option>
                 </select>
                 <input type="checkbox" name="isBus" id="isBus" className='m-2 w-1/12' checked={portProperties.isBus} onChange={e => onChange(portProperties.id, e)}/>
-                <input type="text" name="msb" id="msb" className='border rounded px-2 py-0.5 m-2 w-2/12' value={portProperties.msb} onChange={e => onChange(portProperties.id, e)}/>
-                <input type="text" name="lsb" id="lsb" className='border rounded px-2 py-0.5 m-2 w-2/12' value={portProperties.lsb} onChange={e => onChange(portProperties.id, e)}/>
+                <input type="text" name="msb" id="msb" className='border rounded px-2 py-0.5 m-2 w-2/12 disabled:border-gray-400' value={portProperties.msb} onChange={e => onChange(portProperties.id, e)}
+                disabled={portProperties.isBus === false ? true : false}
+                />
+                <input type="text" name="lsb" id="lsb" className='border rounded px-2 py-0.5 m-2 w-2/12 disabled:border-gray-400' value={portProperties.lsb} onChange={e => onChange(portProperties.id, e)}
+                disabled={portProperties.isBus === false ? true : false}
+                />
             </div>
         )
     }
