@@ -12,16 +12,20 @@ const codeFiller = (entName, archName, ports) => {
     architectureName = archName
     maxPortString = 0
 
-    // check every portName and get the max lenght of said ports
-    // This will be useful later for a cleaner format
-    for(let port of ports){
+    // delete objects with empty properties
+    ports = ports.filter((port) => { return !(port["portName"] === "" || (port["isBus"] === true && (port["msb"] === "" || port["lsb"] === "")) ) })
+
+    for(let [i, port] of ports.entries()){
+        
+        // check every portName and get the max lenght of said ports
+        // This will be useful later for a cleaner format
         if(port["portName"].length > maxPortString)
             maxPortString = port["portName"].length
     }
 
     // fill the entity template with ports
     for(let [i, port] of ports.entries()){
-        
+
         // FORMAT:
         // if BUS:
         //      portName : direction std_logic_vector(msb downto lsb);
@@ -88,7 +92,31 @@ let code = codeFiller("hola", "prueba", [
         "isBus": true,
         "msb": "3",
         "lsb": "0"
-    }
+    },
+    {
+        "id": 4,
+        "portName": "C",
+        "direction": "in",
+        "isBus": true,
+        "msb": "",
+        "lsb": ""
+    },
+    {
+        "id": 5,
+        "portName": "",
+        "direction": "in",
+        "isBus": false,
+        "msb": "3",
+        "lsb": "0"
+    },
+    {
+        "id": 6,
+        "portName": "",
+        "direction": "in",
+        "isBus": true,
+        "msb": "",
+        "lsb": ""
+    },
 ])
 
 console.log(code)
