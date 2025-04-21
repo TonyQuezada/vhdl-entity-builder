@@ -4,7 +4,7 @@ import '../App.css'
 import Port from "./Port"
 import InputLabel from "./InputLabel"
 import { useState } from 'react'
-import codeFiller from '../algorithm.js'
+import { codeFiller, saveToFile } from '../algorithm.js'
 
 const PortTable = () => {
 
@@ -89,7 +89,7 @@ const PortTable = () => {
             <form  className="flex flex-col">
                 <button type="button"
                 className="rounded bg-blue-700 text-white font-medium w-8/12 m-10 mt-15 p-5 self-center hover:bg-blue-800 active:ring-blue-300 active:ring-4"
-                onClick={()=>console.log(codeFiller(entityName, archName, portState))}
+                onClick={ () => saveToFile((codeFiller(entityName, archName, portState)), entityName) }
                 >Save VHDL file</button>      
             </form>
         </>

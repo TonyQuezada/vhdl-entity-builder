@@ -1,9 +1,14 @@
 // function to build the entity's port list
 // receives entity name and architecture name as strings
 // receives ports as an array of objects
-const codeFiller = (entityName, architectureName, ports) => {
+export const codeFiller = (entityName, architectureName, ports) => {
     // default values
     let entity = ``
+    if(entityName === "")
+        entityName = "my_entity"
+    if(architectureName === "")
+        architectureName = "behavioral"
+
     let maxPortString = 0
 
     // delete objects with empty properties
@@ -61,7 +66,22 @@ end ${architectureName};`
     )
 }
 
-export default codeFiller
+export const saveToFile = (content, fileName) => {
+    if(fileName === "" || fileName === undefined)
+        fileName = "my_entity.txt"
+    else
+        fileName = `${fileName}.txt`
+    
+    const blob = new Blob([content], { type: 'file/text' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = fileName
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+}
 
 
 // // test
