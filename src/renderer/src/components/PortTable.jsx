@@ -4,7 +4,7 @@ import '../App.css'
 import Port from "./Port"
 import InputLabel from "./InputLabel"
 import { useState } from 'react'
-import { codeFiller, saveToFile } from '../algorithm.js'
+import { codeFiller, saveToFile, copyToClipboard } from '../algorithm.js'
 
 const PortTable = () => {
 
@@ -86,11 +86,16 @@ const PortTable = () => {
 
             </form>
 
-            <form  className="flex flex-col">
+            <form  className="flex flex-row justify-center">
                 <button type="button"
-                className="rounded bg-blue-700 text-white font-medium w-8/12 m-10 mt-15 p-5 self-center hover:bg-blue-800 active:ring-blue-300 active:ring-4"
-                onClick={ () => saveToFile((codeFiller(entityName, archName, portState)), entityName) }
-                >Save VHDL file</button>      
+                className="rounded bg-blue-700 text-white font-medium w-7/12 mt-15 mx-2 p-5 h-18 self-center hover:bg-blue-800 active:ring-blue-300 active:ring-4"
+                onClick={ () => saveToFile((codeFiller(portState, entityName, archName)), entityName) }
+                >Save VHDL file</button>
+                <button type="button"
+                title='copy to clipboard'
+                onClick={() => copyToClipboard((codeFiller(portState)))}
+                className='rounded bg-blue-800 text-white font-medium mt-15 mx-2 p-5 h-18 w-18 self-center hover:bg-blue-900 active:ring-blue-300 active:ring-4'
+                ><img src='/assets/clipboard.png'/></button>      
             </form>
         </>
 

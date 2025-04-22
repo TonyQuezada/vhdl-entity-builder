@@ -1,12 +1,12 @@
 // function to build the entity's port list
 // receives entity name and architecture name as strings
 // receives ports as an array of objects
-export const codeFiller = (entityName, architectureName, ports) => {
+export const codeFiller = (ports, entityName, architectureName) => {
     // default values
     let entity = ``
-    if(entityName === "")
+    if(entityName === "" || entityName === undefined)
         entityName = "my_entity"
-    if(architectureName === "")
+    if(architectureName === "" || architectureName === undefined)
         architectureName = "behavioral"
 
     let maxPortString = 0
@@ -83,6 +83,9 @@ export const saveToFile = (content, fileName) => {
     URL.revokeObjectURL(url)
 }
 
+export const copyToClipboard = (content) => {
+    navigator.clipboard.writeText(content);
+}
 
 // // test
 // let code = codeFiller("hola", "prueba", [
