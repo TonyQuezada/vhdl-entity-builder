@@ -68,11 +68,11 @@ end ${architectureName};`
 
 export const saveToFile = (content, fileName) => {
     if(fileName === "" || fileName === undefined)
-        fileName = "my_entity.txt"
+        fileName = "my_entity.vhd"
     else
-        fileName = `${fileName}.txt`
+        fileName = `${fileName}.vhd`
     
-    const blob = new Blob([content], { type: 'file/text' })
+    const blob = new Blob([content], { type: 'application/vhd' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
