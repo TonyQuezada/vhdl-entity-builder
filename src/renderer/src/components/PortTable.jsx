@@ -5,6 +5,7 @@ import Port from "./Port"
 import InputLabel from "./InputLabel"
 import { useState, useEffect } from 'react'
 import { codeFiller, saveToFile, copyToClipboard } from '../algorithm.js'
+import clip from '../../public/assets/clipboard.png'
 
 const PortTable = () => {
 
@@ -107,7 +108,7 @@ const PortTable = () => {
                 title='copy to clipboard'
                 onClick={() => {copyToClipboard((codeFiller(portState, entityName, archName))); setCopyTooltip(true)}}
                 className='rounded bg-blue-800 text-white font-medium mt-15 mx-2 p-5 h-18 w-18 self-center hover:bg-blue-900 active:ring-blue-300 active:ring-4 relative'
-                ><img src='/assets/clipboard.png'/>
+                ><img src={clip}/>
                 {copyTooltip &&
                 <div 
                 className='rounded ring-4 ring-red-300 bg-white text-center font font-medium text-red-600 w-min text-nowrap p-2 m-2 absolute left-10 top-12d'
