@@ -6,7 +6,7 @@ This app provides a quick and easy way to start your VHDL code. Heavily inspired
 4. Lastly, you can **save your code** as .vhd file or, if you prefer, **copy to clipboard**
 
 ## Download
-This app is available for Windows, Linux and Mac.
+This app is available for Windows, Linux and Mac. Check releases section for windows, or use links below for others:
 - [Download For Windows HERE](/builds-download/win-build/)
 - [Download For Linux HERE](/builds-download/linux-build/)
 - [Download For Mac HERE](/builds-download/mac-build/)
