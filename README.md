@@ -7,9 +7,9 @@
 
 ## Download
 This app is available for **Windows**, **Linux**, and **Mac**.
-You can check the *Releases* section for the Windows version, or use the links below for other platforms:
+You can check the *Releases* section or click links below:
 - [Download For Windows HERE](https://github.com/TonyQuezada/vhdl-entity-builder/releases/tag/v1-windows)
-- [Download For Linux HERE](/builds-download/linux-build/)
+- [Download For Linux HERE](https://github.com/TonyQuezada/vhdl-entity-builder/releases/tag/v1-linux)
 - [Download For Mac HERE](/builds-download/mac-build/)
 
 ## Technologies used
