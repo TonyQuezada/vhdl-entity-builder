@@ -3,7 +3,7 @@
 import '../App.css'
 import Port from "./Port"
 import InputLabel from "./InputLabel"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { codeFiller, saveToFile, copyToClipboard } from '../algorithm.js'
 
 const PortTable = () => {
@@ -59,6 +59,18 @@ const PortTable = () => {
     const [entityName, setEntityName] = useState("")
     const [archName, setArchName] = useState("")
 
+    const [copyTooltip, setCopyTooltip] = useState(false)
+
+    useEffect(() => {
+        if (copyTooltip) {
+          const timer = setTimeout(() => {
+            setCopyTooltip(false);
+          }, 600);
+    
+          return () => clearTimeout(timer);
+        }
+      }, [copyTooltip]);
+
     return (
         <>
             <InputLabel labelText="Entity Name" inputHint="my_entity" value={entityName} onChange={e => setEntityName(e.target.value)}/>
@@ -93,10 +105,22 @@ const PortTable = () => {
                 >Save VHDL file</button>
                 <button type="button"
                 title='copy to clipboard'
-                onClick={() => copyToClipboard((codeFiller(portState)))}
-                className='rounded bg-blue-800 text-white font-medium mt-15 mx-2 p-5 h-18 w-18 self-center hover:bg-blue-900 active:ring-blue-300 active:ring-4'
-                ><img src='/assets/clipboard.png'/></button>      
+                onClick={() => {copyToClipboard((codeFiller(portState))); setCopyTooltip(true)}}
+                className='rounded bg-blue-800 text-white font-medium mt-15 mx-2 p-5 h-18 w-18 self-center hover:bg-blue-900 active:ring-blue-300 active:ring-4 relative'
+                ><img src='/assets/clipboard.png'/>
+                {copyTooltip &&
+                <div 
+                className='rounded ring-4 ring-red-300 bg-white text-center font font-medium text-red-600 w-min text-nowrap p-2 m-2 absolute left-10 top-12 transition-all'
+
+                >
+                    Saved to clipboard!
+                </div>
+                }
+                </button>      
             </form>
+            <div className='bg-red-500 w-10/12 justify-self-center relative'>
+                
+            </div>
         </>
 
     )
