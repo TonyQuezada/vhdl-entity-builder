@@ -1,18 +1,19 @@
 # VDHL Entity Builder
-This app provides a quick and easy way to start your VHDL code. Heavily inspired in Xilinx's New Source Wizard for vhdl modules, the app lets you:
-1. Define an entity name
-2. Define an architecture name
-3. Add ports, being able to set them as input or output, and also there's the possibility to convert them to buses and choose their size.
-4. Lastly, you can **save your code** as .vhd file or, if you prefer, **copy to clipboard**
+**VHDL Entity Builder** is a simple and efficient app to help you start your VHDL projects. Inspired by Xilinx's New Source Wizard for VHDL modules, the app allows you to:
+1. Define an **entity name**.
+2. Define an **architecture name**.
+3. Add **ports**, selecting whether they're inputs or outputs. You can also convert ports into buses and define their size.
+4. Finally, you can either **save your code** as a `.vhd` file or **copy it to the clipboard** for quick access
 
 ## Download
-This app is available for Windows, Linux and Mac.
-- [Download For Windows HERE](/builds-download/win-build/)
-- [Download For Linux HERE](/builds-download/linux-build/)
+This app is available for **Windows**, **Linux**, and **Mac**.
+You can check the *Releases* section or click links below:
+- [Download For Windows HERE](https://github.com/TonyQuezada/vhdl-entity-builder/releases/tag/v1-windows)
+- [Download For Linux HERE](https://github.com/TonyQuezada/vhdl-entity-builder/releases/tag/v1-linux)
 - [Download For Mac HERE](/builds-download/mac-build/)
 
 ## Technologies used
-- ReactJS
-- TailwindCSS
-- Electron
+- **ReactJS**
+- **TailwindCSS**
+- **Electron**
 
