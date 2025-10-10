@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.tablacss {
+    @apply bg-gray-200 rounded px-1 py-2 m-2 text-center font-medium;
+}
