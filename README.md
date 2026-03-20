@@ -1,5 +1,5 @@
 # VDHL Entity Builder
-## https://escom.tonyquezada.com/
+## https://vhdl.tonyquezada.com/
 
 **VHDL Entity Builder** is a simple and efficient app to help you start your VHDL projects. Inspired by Xilinx's New Source Wizard for VHDL modules, the app allows you to:
 1. Define an **entity name**.
